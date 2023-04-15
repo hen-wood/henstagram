@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  # GET post by id
+  get '/posts/:id', to: 'posts#index'
+end
+Rails.application.routes.draw do
+  devise_for :users
+  # GET all posts
+  get '/posts', to: 'posts#index'
 end
